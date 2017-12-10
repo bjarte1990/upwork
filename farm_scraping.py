@@ -24,7 +24,7 @@ state_zips = list(map(lambda x: x.find('a').text,
                   zips_soup.find_all('div', {'class': 'list-group-item'})))
 
 farmers = []
-for zip in state_zips[:30]:
+for zip in state_zips:
     for i in count():
         farm_soup = get_soup_from_link(STATE_ZIP_SEARCH_URL.format(zip=zip, page=i))
         trs = farm_soup.find_all('tr')[1:]
